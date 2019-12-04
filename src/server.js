@@ -1,18 +1,39 @@
 import { importSchema } from "graphql-import";
 import { ApolloServer, AuthenticationError } from "apollo-server";
 import _ from "lodash";
+import { ApolloGateway, RemoteGraphQLDataSource } from "@apollo/gateway";
+import { buildFederatedSchema } from "@apollo/federation";
+import gql from "graphql-tag";
 
-import * as resolvers from "./graphs/resolvers";
+const typeDefs = gql`
+  type Query {
+    me: User
+  }
 
-const typeDefs = importSchema("./src/graphs/schema.graphql");
+  type User @key(fields: "id") {
+    id: ID!
+    username: String
+  }
+`;
+
+const resolvers = {
+  Query: {
+    me() {
+      return { id: "1", username: "@ava" };
+    }
+  },
+  User: {
+    __resolveReference(user, { fetchUserById }) {
+      return fetchUserById(user.id);
+    }
+  }
+};
 
 // not required but can be useful if you run multiple servers.
 const PORT = process.env.PORT || 2999;
 
 const server = new ApolloServer({
-  typeDefs,
   context: req => new Context(req),
-  resolvers: _.reduce(resolvers, (prev, next) => _.merge(prev, next)),
   formatError: err => {
     if (err.message.startsWith("Context creation failed: ")) {
       return new AuthenticationError(
@@ -21,7 +42,16 @@ const server = new ApolloServer({
     }
     return err;
   },
-  playground: true
+  playground: true,
+  // needed as subscriptions are not available through federated. you can subscribe directly to the
+  // server that is providing the subscription or in a layer like redis.
+  subscriptions: false,
+  gateway: new ApolloGateway({
+    serviceList: [
+      { name: "account", url: "http://localhost:2990/graphql" },
+      { name: "blog", url: "http://localhost:2995/graphql" }
+    ]
+  })
 });
 
 // Start accepting connections.

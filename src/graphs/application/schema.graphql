@@ -1,7 +1,0 @@
-type Query {
-  application: Application
-}
-
-type Application {
-  online: Boolean
-}

@@ -86,70 +86,6 @@
 /************************************************************************/
 /******/ ({
 
-/***/ "./src/graphs/application/resolvers.js":
-/*!*********************************************!*\
-  !*** ./src/graphs/application/resolvers.js ***!
-  \*********************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! babel-runtime/regenerator */ "babel-runtime/regenerator");
-/* harmony import */ var babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var babel_runtime_helpers_asyncToGenerator__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! babel-runtime/helpers/asyncToGenerator */ "babel-runtime/helpers/asyncToGenerator");
-/* harmony import */ var babel_runtime_helpers_asyncToGenerator__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(babel_runtime_helpers_asyncToGenerator__WEBPACK_IMPORTED_MODULE_1__);
-
-
-
-var _this = undefined;
-
-/* harmony default export */ __webpack_exports__["default"] = ({
-  Query: {
-    application: function () {
-      var _ref = babel_runtime_helpers_asyncToGenerator__WEBPACK_IMPORTED_MODULE_1___default()( /*#__PURE__*/babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee(obj, _ref2, ctx) {
-        var input = _ref2.input;
-        return babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee$(_context) {
-          while (1) {
-            switch (_context.prev = _context.next) {
-              case 0:
-                return _context.abrupt("return", {
-                  online: true
-                });
-
-              case 1:
-              case "end":
-                return _context.stop();
-            }
-          }
-        }, _callee, _this);
-      }));
-
-      return function application(_x, _x2, _x3) {
-        return _ref.apply(this, arguments);
-      };
-    }()
-  }
-});
-
-/***/ }),
-
-/***/ "./src/graphs/resolvers.js":
-/*!*********************************!*\
-  !*** ./src/graphs/resolvers.js ***!
-  \*********************************/
-/*! exports provided: application */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _application_resolvers__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./application/resolvers */ "./src/graphs/application/resolvers.js");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "application", function() { return _application_resolvers__WEBPACK_IMPORTED_MODULE_0__["default"]; });
-
-
-
-/***/ }),
-
 /***/ "./src/index.js":
 /*!**********************!*\
   !*** ./src/index.js ***!
@@ -175,13 +111,24 @@ __webpack_require__.r(__webpack_exports__);
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var babel_runtime_helpers_classCallCheck__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! babel-runtime/helpers/classCallCheck */ "babel-runtime/helpers/classCallCheck");
 /* harmony import */ var babel_runtime_helpers_classCallCheck__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(babel_runtime_helpers_classCallCheck__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var graphql_import__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! graphql-import */ "graphql-import");
-/* harmony import */ var graphql_import__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(graphql_import__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var apollo_server__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! apollo-server */ "apollo-server");
-/* harmony import */ var apollo_server__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(apollo_server__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var lodash__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! lodash */ "lodash");
-/* harmony import */ var lodash__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(lodash__WEBPACK_IMPORTED_MODULE_3__);
-/* harmony import */ var _graphs_resolvers__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./graphs/resolvers */ "./src/graphs/resolvers.js");
+/* harmony import */ var babel_runtime_helpers_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! babel-runtime/helpers/taggedTemplateLiteral */ "babel-runtime/helpers/taggedTemplateLiteral");
+/* harmony import */ var babel_runtime_helpers_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(babel_runtime_helpers_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var graphql_import__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! graphql-import */ "graphql-import");
+/* harmony import */ var graphql_import__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(graphql_import__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var apollo_server__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! apollo-server */ "apollo-server");
+/* harmony import */ var apollo_server__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(apollo_server__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var lodash__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! lodash */ "lodash");
+/* harmony import */ var lodash__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(lodash__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var _apollo_gateway__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @apollo/gateway */ "@apollo/gateway");
+/* harmony import */ var _apollo_gateway__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_apollo_gateway__WEBPACK_IMPORTED_MODULE_5__);
+/* harmony import */ var _apollo_federation__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @apollo/federation */ "@apollo/federation");
+/* harmony import */ var _apollo_federation__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(_apollo_federation__WEBPACK_IMPORTED_MODULE_6__);
+/* harmony import */ var graphql_tag__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! graphql-tag */ "graphql-tag");
+/* harmony import */ var graphql_tag__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(graphql_tag__WEBPACK_IMPORTED_MODULE_7__);
+
+
+
+var _templateObject = babel_runtime_helpers_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_1___default()(["\n  type Query {\n    me: User\n  }\n\n  type User @key(fields: \"id\") {\n    id: ID!\n    username: String\n  }\n"], ["\n  type Query {\n    me: User\n  }\n\n  type User @key(fields: \"id\") {\n    id: ID!\n    username: String\n  }\n"]);
 
 
 
@@ -189,31 +136,49 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-var typeDefs = Object(graphql_import__WEBPACK_IMPORTED_MODULE_1__["importSchema"])("./src/graphs/schema.graphql");
+
+var typeDefs = graphql_tag__WEBPACK_IMPORTED_MODULE_7___default()(_templateObject);
+
+var resolvers = {
+  Query: {
+    me: function me() {
+      return { id: "1", username: "@ava" };
+    }
+  },
+  User: {
+    __resolveReference: function __resolveReference(user, _ref) {
+      var fetchUserById = _ref.fetchUserById;
+
+      return fetchUserById(user.id);
+    }
+  }
+};
 
 // not required but can be useful if you run multiple servers.
 var PORT = process.env.PORT || 2999;
 
-var server = new apollo_server__WEBPACK_IMPORTED_MODULE_2__["ApolloServer"]({
-  typeDefs: typeDefs,
+var server = new apollo_server__WEBPACK_IMPORTED_MODULE_3__["ApolloServer"]({
   context: function context(req) {
     return new Context(req);
   },
-  resolvers: lodash__WEBPACK_IMPORTED_MODULE_3___default.a.reduce(_graphs_resolvers__WEBPACK_IMPORTED_MODULE_4__, function (prev, next) {
-    return lodash__WEBPACK_IMPORTED_MODULE_3___default.a.merge(prev, next);
-  }),
   formatError: function formatError(err) {
     if (err.message.startsWith("Context creation failed: ")) {
-      return new apollo_server__WEBPACK_IMPORTED_MODULE_2__["AuthenticationError"](err.message.replace("Context creation failed: ", ""));
+      return new apollo_server__WEBPACK_IMPORTED_MODULE_3__["AuthenticationError"](err.message.replace("Context creation failed: ", ""));
     }
     return err;
   },
-  playground: true
+  playground: true,
+  // needed as subscriptions are not available through federated. you can subscribe directly to the
+  // server that is providing the subscription or in a layer like redis.
+  subscriptions: false,
+  gateway: new _apollo_gateway__WEBPACK_IMPORTED_MODULE_5__["ApolloGateway"]({
+    serviceList: [{ name: "account", url: "http://localhost:2990/graphql" }, { name: "blog", url: "http://localhost:2995/graphql" }]
+  })
 });
 
 // Start accepting connections.
-server.listen({ port: PORT }).then(function (_ref) {
-  var url = _ref.url;
+server.listen({ port: PORT }).then(function (_ref2) {
+  var url = _ref2.url;
 
   console.log("\uD83D\uDE80 Apollo server running on port " + url);
 });
@@ -230,6 +195,28 @@ var Context = function Context(request) {
 
 /***/ }),
 
+/***/ "@apollo/federation":
+/*!*************************************!*\
+  !*** external "@apollo/federation" ***!
+  \*************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = require("@apollo/federation");
+
+/***/ }),
+
+/***/ "@apollo/gateway":
+/*!**********************************!*\
+  !*** external "@apollo/gateway" ***!
+  \**********************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = require("@apollo/gateway");
+
+/***/ }),
+
 /***/ "apollo-server":
 /*!********************************!*\
   !*** external "apollo-server" ***!
@@ -238,17 +225,6 @@ var Context = function Context(request) {
 /***/ (function(module, exports) {
 
 module.exports = require("apollo-server");
-
-/***/ }),
-
-/***/ "babel-runtime/helpers/asyncToGenerator":
-/*!*********************************************************!*\
-  !*** external "babel-runtime/helpers/asyncToGenerator" ***!
-  \*********************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = require("babel-runtime/helpers/asyncToGenerator");
 
 /***/ }),
 
@@ -263,14 +239,14 @@ module.exports = require("babel-runtime/helpers/classCallCheck");
 
 /***/ }),
 
-/***/ "babel-runtime/regenerator":
-/*!********************************************!*\
-  !*** external "babel-runtime/regenerator" ***!
-  \********************************************/
+/***/ "babel-runtime/helpers/taggedTemplateLiteral":
+/*!**************************************************************!*\
+  !*** external "babel-runtime/helpers/taggedTemplateLiteral" ***!
+  \**************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = require("babel-runtime/regenerator");
+module.exports = require("babel-runtime/helpers/taggedTemplateLiteral");
 
 /***/ }),
 
@@ -282,6 +258,17 @@ module.exports = require("babel-runtime/regenerator");
 /***/ (function(module, exports) {
 
 module.exports = require("graphql-import");
+
+/***/ }),
+
+/***/ "graphql-tag":
+/*!******************************!*\
+  !*** external "graphql-tag" ***!
+  \******************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = require("graphql-tag");
 
 /***/ }),
 

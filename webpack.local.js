@@ -10,7 +10,7 @@ module.exports = merge(config, {
     new NodemonPlugin({
       verbose: false,
       ignore: ["*.js.map"],
-      nodeArgs: ["--inspect"]
+      nodeArgs: ["--inspect=9000"]
     })
   ]
 });
