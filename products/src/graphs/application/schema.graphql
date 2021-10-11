@@ -1,0 +1,7 @@
+type Query{
+  accountApplication: AccountApplication
+}
+
+type AccountApplication {
+  accountOnline: Boolean
+}

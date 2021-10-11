@@ -1,0 +1,10 @@
+scalar Date
+scalar DateTime
+
+type Query {
+  blogApplication: BlogApplication
+}
+
+type BlogApplication {
+  blogOnline: Boolean
+}
