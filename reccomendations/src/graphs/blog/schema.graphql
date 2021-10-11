@@ -1,8 +1,0 @@
-type Query {
-  posts: [BlogPost]
-}
-
-type BlogPost {
-  id: ID!
-  title: String!
-}

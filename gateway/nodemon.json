@@ -1,0 +1,14 @@
+{
+  "verbose": true,
+  "ignore": ["*.test.js"],
+  "watch": [
+    "./",
+    "../service.products/",
+    "../service.recommendations/"
+  ],
+  "events": {
+    "restart": "echo 'APP RESTARTED!!!!'"
+  },
+  "delay": 5, 
+  "ext": "js,json,graphql"
+}

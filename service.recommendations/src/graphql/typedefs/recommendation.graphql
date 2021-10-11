@@ -1,0 +1,15 @@
+extend type User {
+  "A users product recommendations"
+  recommendations: [Product!]!
+  reviews: [Review]
+}
+
+# This is a "stub" of the Product entity (see below)
+extend type Product @key(fields: "upc") {
+  upc: String! @external
+}
+
+type Review {
+  product: Product
+  stars: Int
+}

@@ -1,0 +1,28 @@
+{
+  "env": {
+    "es6": true,
+    "node": true,
+    "jest": true
+  },
+  "parserOptions": {
+    "allowImportExportEverywhere": true,
+    "ecmaVersion": 2020
+  },
+  "plugins": ["prettier"],
+  "globals": {
+    "Package": true,
+    "$": true
+  },
+  "extends": ["prettier", "eslint:recommended"],
+  "rules": {
+    "no-unused-vars": [
+      1,
+      {
+        "vars": "all",
+        "args": "after-used",
+        "ignoreRestSiblings": true,
+        "varsIgnorePattern": "^_"
+      }
+    ]
+  }
+}
