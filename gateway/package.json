@@ -1,0 +1,23 @@
+{
+  "name": "federation-gateway",
+  "version": "0.0.1",
+  "description": "Federated Graphql Server",
+  "repository": "https://github.com/KennyHammerlund/gqlsummmitApi.git",
+  "author": "Kenny Hammerlund <Kenny.hammerlund@gmail.com>",
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "start:local": "nodemon --config nodemon.json --delay 3 ./src/index.js",
+    "start": "node ./src/index.js",
+    "gen-schema": "rover graph fetch federation-products > products.graphql && rover graph fetch stargazer-llc > recommendations.graphql && rover supergraph compose --config ./supergraph.yaml > supergraph.graphql"
+  },
+  "dependencies": {
+    "@apollo/gateway": "0.42.1",
+    "@apollo/subgraph": "0.1.0",
+    "apollo-server": "3.3.0",
+    "graphql": "15.6.1"
+  },
+  "devDependencies": {
+    "nodemon": "2.0.13"
+  }
+}
