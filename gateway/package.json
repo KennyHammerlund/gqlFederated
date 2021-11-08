@@ -14,7 +14,7 @@
   "dependencies": {
     "@apollo/gateway": "0.42.1",
     "@apollo/subgraph": "0.1.0",
-    "apollo-server": "3.3.0",
+    "apollo-server": "3.4.1",
     "graphql": "15.6.1"
   },
   "devDependencies": {
